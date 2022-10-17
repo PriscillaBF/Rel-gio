@@ -1,0 +1,79 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaTexto(texto, x , y) {
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.font='40px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);    
+    }
+
+        // circulo do relogio para servir como borda
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.arc(300,200,200,0, 2 * 3.14);
+        pincel.fill();
+        
+        // circulo do relogio
+        pincel.fillStyle = "white";
+        pincel.beginPath();
+        pincel.arc(300,200,180,0, 2 * 3.14);
+        pincel.fill();
+
+        // os números do relógio
+        desenhaTexto("1", 360,80);
+        desenhaTexto("2", 400,140);
+        desenhaTexto("3", 430,200);
+        desenhaTexto("4", 420,270);
+        desenhaTexto("5", 360,330);
+        desenhaTexto("6", 290,360);
+        desenhaTexto("7", 220,330);
+        desenhaTexto("8", 160,280);
+        desenhaTexto("9", 150,200);
+        desenhaTexto("10", 170,140);
+        desenhaTexto("11", 220,80);
+        desenhaTexto("12", 280,60);
+           
+        // bolinha do centro 
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.arc(300,200,5,0, 2 * 3.14);
+        pincel.fill();
+
+        // ponteiro de hora
+        pincel.beginPath();
+        pincel.moveTo(250,200);
+        pincel.lineTo(300, 200);
+        pincel.stroke();
+
+        // ponteiro de minutos
+        pincel.beginPath();
+        pincel.moveTo(300,300);
+        pincel.lineTo(300, 200);
+        pincel.stroke();
+
+        // seta do ponteiro de horas
+        pincel.beginPath();
+        pincel.moveTo (250, 220);
+        pincel.lineTo(250,180);
+        pincel.lineTo(220,200);
+        pincel.fill();
+
+        // seta do ponteiro de minutos
+     
+        pincel.beginPath();
+        pincel.moveTo (280, 290);
+        pincel.lineTo(300,320);
+        pincel.lineTo(320,290);
+        pincel.fill();
+
+</script>
